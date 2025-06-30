@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AVASH STORE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+        background-color: #f6f6f6;
+      }
+
+      header {
+        background-color: #ffcc00;
+        padding: 15px 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      header h1 {
+        font-family: "Poppins", sans-serif;
+        margin: 0 0 10px 0;
+        color: #333;
+      }
+
+      .search-bar input {
+        padding: 8px 12px;
+        border-radius: 20px;
+        border: 1px solid #ccc;
+        width: 300px;
+        margin-bottom: 15px;
+      }
+
+      nav {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        background-color: #ffffff;
+        padding: 12px 0;
+        border-bottom: 1px solid #ddd;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+        padding: 10px 20px;
+        border-radius: 6px;
+        transition: all 0.3s ease;
+      }
+
+      nav a:hover {
+        background-color: #333;
+        color: #fff;
+      }
+
+      .swiper {
+        width: 100%;
+        max-width: 1100px;
+        height: 300px;
+        border-radius: 12px;
+        overflow: hidden;
+        margin-bottom: 20px;
+      }
+
+      .swiper-slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .container {
+        display: flex;
+        gap: 20px;
+        padding: 20px;
+        flex-wrap: wrap;
+      }
+
+      .sidebar {
+        width: 240px;
+        background-color: #fff;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+      }
+
+      .sidebar h3 {
+        margin-top: 0;
+      }
+      .header-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+
+      .header-top h1 {
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+        color: #333;
+      }
+
+      .search-bar input {
+        padding: 8px 12px;
+        border-radius: 20px;
+        border: 1px solid #ccc;
+        width: 300px;
+      }
+
+      .product-list {
+        flex: 1;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 20px;
+      }
+
+      .product {
+        background-color: #fff;
+        padding: 15px;
+        text-align: center;
+        border-radius: 8px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .product img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 5px;
+      }
+
+      .product h2 {
+        font-size: 18px;
+        margin: 10px 0 5px;
+      }
+
+      .product button {
+        padding: 6px 12px;
+        background-color: #ffcc00;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .cart {
+        margin-top: 20px;
+      }
+
+      .cart h4 {
+        margin: 10px 0 5px;
+      }
+
+      footer {
+        text-align: center;
+        padding: 15px;
+        background-color: #fffae0;
+        border-top: 1px solid #eee;
+        margin-top: 40px;
+      }
+    </style>
+  </head>
+  
+  <body>
+    <!-- HEADER -->
+    <header>
+      <div class="header-top">
+        <h1>AVASH STORE</h1>
+        <div class="search-bar">
+          <input type="text" placeholder="Cari produk..." />
+        </div>
+      </div>
+
+      <!-- Swiper (Profil + Promo) -->
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="img/ty.jpg" alt="Profil Banner" />
+          </div>
+          <div class="swiper-slide">
+            <img src="img/tas branded.jpg" alt="Promo 1" />
+          </div>
+          <div class="swiper-slide">
+            <img src="img/po.jpg" alt="Promo 1" />
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </header>
+
+    <!-- MENU -->
+    <nav>
+      <a href="#">Beranda</a>
+      <a href="#">Kategori</a>
+      <a href="#">Promo</a>
+      <a href="#">Tentang Kami</a>
+      <a href="#">Kontak</a>
+    </nav>
+
+    <!-- KONTEN UTAMA -->
+    <div class="container">
+      <!-- SIDEBAR -->
+      <div class="sidebar">
+        <h3>Filter Harga</h3>
+        <input type="range" min="0" max="1000000" value="500000" />
+        <button>Filter</button>
+
+        <div class="cart">
+          <h4>Keranjang</h4>
+          <ul id="cart-items"></ul>
+          <p>Total: <span id="total">Rp0</span></p>
+          <button>Lihat Keranjang</button>
+        </div>
+      </div>
+
+      <!-- PRODUK -->
+      <div class="product-list">
+        <div class="product">
+          <img src="img/po.jpg" alt="Produk A" />
+          <h2>Produk A</h2>
+          <p>Rp250.000</p>
+          <button onclick="addToCart('Produk A', 250000)">Tambah</button>
+        </div>
+
+        <div class="product">
+          <img src="img/1.jpg" alt="Produk B" />
+          <h2>Produk B</h2>
+          <p>Rp175.000</p>
+          <button onclick="addToCart('Produk B', 175000)">Tambah</button>
+        </div>
+
+        <div class="product">
+          <img src="img/2.jpg" alt="Produk C" />
+          <h2>Produk C</h2>
+          <p>Rp130.000</p>
+          <button onclick="addToCart('Produk C', 130000)">Tambah</button>
+        </div>
+
+        <div class="product">
+          <img src="img/3.jpg" alt="Produk D" />
+          <h2>Produk D</h2>
+          <p>Rp105.000</p>
+          <button onclick="addToCart('Produk D', 105000)">Tambah</button>
+        </div>
+
+        <div class="product">
+          <img src="img/4.jpg" alt="Produk E" />
+          <h2>Produk E</h2>
+          <p>Rp95.000</p>
+          <button onclick="addToCart('Produk E', 95000)">Tambah</button>
+        </div>
+
+        <div class="product">
+          <img src="img/ysl.jpg" alt="Produk F" />
+          <h2>Produk F</h2>
+          <p>Rp575.000</p>
+          <button onclick="addToCart('Produk F', 575000)">Tambah</button>
+        </div>
+      </div>
+    </div>
+
+    <footer>&copy; 2025 AVASH STORE | Pesan saja yang kamu suka😎</footer>
+
+    <!-- SCRIPT KERANJANG -->
+    <script>
+      let cartItems = [];
+      let total = 0;
+
+      function addToCart(name, price) {
+        cartItems.push({ name, price });
+        total += price;
+        updateCart();
+      }
+
+      function updateCart() {
+        const cartList = document.getElementById("cart-items");
+        const totalDisplay = document.getElementById("total");
+        cartList.innerHTML = "";
+        cartItems.forEach((item) => {
+          const li = document.createElement("li");
+          li.textContent = `${item.name} - Rp${item.price.toLocaleString()}`;
+          cartList.appendChild(li);
+        });
+        totalDisplay.textContent = `Rp${total.toLocaleString()}`;
+      }
+    </script>
+
+    <!-- SWIPER SCRIPT -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script>
+      const swiper = new Swiper(".mySwiper", {
+        pagination: {
+          el: ".swiper-pagination",
+        },
+        autoplay: {
+          delay: 3500,
+          disableOnInteraction: false,
+        },
+        loop: true,
+      });
+    </script>
+  </body>
+</html>

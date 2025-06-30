@@ -1,0 +1,88 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f9f9f9;
+}
+
+header {
+  background: #2a85da;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.product,
+.cart {
+  border: 1px solid #ccc;
+  background: white;
+  padding: 1rem;
+  border-radius: 10px;
+  width: 200px;
+  text-align: center;
+}
+
+button {
+  background: #0d7ee7;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #df1f88;
+}
+
+.slider {
+  background-color: #fffbea;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+  padding: 10px 0;
+  font-weight: bold;
+  font-size: 16px;
+  color: #333;
+  position: relative;
+  overflow: hidden;
+}
+
+.slides {
+  display: flex;
+  width: 300%;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  width: 100%;
+  flex-shrink: 0;
+  padding: 10px 0;
+}
+
+.slide:not(.active) {
+  display: none;
+}
+.swiper {
+  width: 95%;
+  height: auto;
+  margin: 20px auto;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.swiper-slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+
